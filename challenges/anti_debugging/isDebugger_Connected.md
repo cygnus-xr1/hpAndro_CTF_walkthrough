@@ -20,3 +20,5 @@ Set uncaught java.lang.Throwable
 Set deferred uncaught java.lang.Throwable   
 Initializing jdb ...
 ```
+
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/anti_debugging/img/solved.png?raw=true)
