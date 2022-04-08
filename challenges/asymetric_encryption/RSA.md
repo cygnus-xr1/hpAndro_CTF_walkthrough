@@ -89,10 +89,17 @@ b'hpandro{REDACTED}'
 
 ### Extract the private key from the APK & use it to decrypt the flag
 As it can be seen in the **onGetLogs** method of class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**, the private key comes with the APK (private.der)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_privatekeyfile.png?raw=true)
 
-
+Let's extract the apk contents:
 ```
-$ apktool d com.hpandro.androidsecurity_1.2.apk
+$ apktool d com.hpandro.androidsecurity_1.2.apk && tree com.hpandro.androidsecurity_1.2/assets/
+com.hpandro.androidsecurity_1.2/assets/
+├── private.der
+├── public.der
+└── rri.crt
+
+0 directories, 3 files
 ```
 
 
