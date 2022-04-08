@@ -37,3 +37,17 @@ As it can be seen the class **com.hpandro.androidsecurity.ui.activity.task.encry
 ## Dynamic analysis
 The simplest method to extract the private key used to decrypt the flag is to use [objection](https://github.com/sensepost/objection) to hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
 
+### Push & run frida server on the emulator
+```
+$ adb push frida-server-15.0.19-android-x86 /data/local/tmp/frida-srv
+frida-server-15.0.19-android-x86: 1 file pushed, 0 skipped. 62.5 MB/s (46351796 bytes in 0.708s)
+$ adb shell
+vbox86p:/ # cd /data/local/tmp
+vbox86p:/data/local/tmp # chmod +x frida-srv && ./frida-srv
+```
+
+### Objection hook
+```
+$ objection -g "com.hpandro.androidsecurity" explore                                                                                                                  
+com.hpandro.androidsecurity on (Android: 10) [usb] # android hooking watch class_method com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity.decrypt --dump-args --dump-return
+```
