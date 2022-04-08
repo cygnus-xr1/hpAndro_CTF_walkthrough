@@ -117,7 +117,7 @@ $ openssl rsa -inform DER -in com.hpandro.androidsecurity_1.2/assets/private.der
 writing RSA key
 ```
 
-Decrypt the flag
+Decrypt the flag (Note: the encryption method is "RSA/ECB/OAEPWithSHA1AndMGF1Padding" so the -oaep flag is neccessary for openssl)
 ```
 $ echo -n "OplOuJowyt9ZtkIPKcmi6FVp50sZGd3+TbwXgQYxW0v/+sA87tG2ViJ9D5GOFHvl7nffGNLju5kzE33b1CKztu6/rHbIsu5lftp2qgtLQZdIdYy7F6MDhbvyLNk786QgXPLwND6ccFUv4brz8GAAefougdBYKr9o8IWBw8HxRfu884WLQnOxuhMnANXOU7yp1xaap2ojejSeNNbOWn1VKBMaZviXGVXXR6m4lFlHxMUXEP9h4bjrMraapiNLMM+2sUCuhD80beZK1NVakchy8FpqfJ/+hXaokSvnvQIHTr3H9JPD+flzwgYQn9FVvet4494+c2+rBTFOMdrYxHQwqg==" | base64 -d > flag.enc
 $ openssl rsautl -decrypt -inkey private.pem -in flag.enc -oaep
