@@ -117,11 +117,14 @@ writing RSA key
 ```
 
 Decrypt the flag
+```
 $ echo -n "OplOuJowyt9ZtkIPKcmi6FVp50sZGd3+TbwXgQYxW0v/+sA87tG2ViJ9D5GOFHvl7nffGNLju5kzE33b1CKztu6/rHbIsu5lftp2qgtLQZdIdYy7F6MDhbvyLNk786QgXPLwND6ccFUv4brz8GAAefougdBYKr9o8IWBw8HxRfu884WLQnOxuhMnANXOU7yp1xaap2ojejSeNNbOWn1VKBMaZviXGVXXR6m4lFlHxMUXEP9h4bjrMraapiNLMM+2sUCuhD80beZK1NVakchy8FpqfJ/+hXaokSvnvQIHTr3H9JPD+flzwgYQn9FVvet4494+c2+rBTFOMdrYxHQwqg==" | base64 -d > flag.enc
 $ openssl rsautl -decrypt -inkey private.pem -in flag.enc -oaep
 hpandro{REDACTED}
+```
 
 # Reference
 * https://github.com/sensepost/objection
 * https://github.com/frida/frida/releases
 * https://stackoverflow.com/questions/40951213/how-to-convert-java-byte-to-python-string
+* https://cheatography.com/albertx/cheat-sheets/openssl/pdf/
