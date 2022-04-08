@@ -87,7 +87,7 @@ $ python3
 b'hpandro{REDACTED}'
 ```
 
-### Extract the private key from the APK & use it to decrypt the flag
+### Extract the private key from the APK & Decrypt the flag with OpenSSL
 As it can be seen in the **onGetLogs** method of class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**, the private key comes with the APK (private.der)
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_privatekeyfile.png?raw=true)
 
@@ -100,8 +100,26 @@ com.hpandro.androidsecurity_1.2/assets/
 └── rri.crt
 
 0 directories, 3 files
+
+$ binwalk com.hpandro.androidsecurity_1.2/assets/private.der
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             Private key in DER format (PKCS header length: 4, sequence length: 1213
+26            0x1A            Private key in DER format (PKCS header length: 4, sequence length: 1187
+
 ```
 
+Convert private.der to private.pem
+```
+$ openssl rsa -inform DER -in com.hpandro.androidsecurity_1.2/assets/private.der -out private.pem
+writing RSA key
+```
+
+Decrypt the flag
+$ echo -n "OplOuJowyt9ZtkIPKcmi6FVp50sZGd3+TbwXgQYxW0v/+sA87tG2ViJ9D5GOFHvl7nffGNLju5kzE33b1CKztu6/rHbIsu5lftp2qgtLQZdIdYy7F6MDhbvyLNk786QgXPLwND6ccFUv4brz8GAAefougdBYKr9o8IWBw8HxRfu884WLQnOxuhMnANXOU7yp1xaap2ojejSeNNbOWn1VKBMaZviXGVXXR6m4lFlHxMUXEP9h4bjrMraapiNLMM+2sUCuhD80beZK1NVakchy8FpqfJ/+hXaokSvnvQIHTr3H9JPD+flzwgYQn9FVvet4494+c2+rBTFOMdrYxHQwqg==" | base64 -d > flag.enc
+$ openssl rsautl -decrypt -inkey private.pem -in flag.enc -oaep
+hpandro{REDACTED}
 
 # Reference
 * https://github.com/sensepost/objection
