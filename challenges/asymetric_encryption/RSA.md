@@ -35,7 +35,7 @@ As it can be seen the class **com.hpandro.androidsecurity.ui.activity.task.encry
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_enc_dec_methods.png?raw=true)
 
 ## Dynamic analysis
-The simplest method to extract the private key used to decrypt the flag is to use [objection](https://github.com/sensepost/objection) to hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
+The simplest method to extract the private key and the decrypted flag is to use [objection](https://github.com/sensepost/objection) to hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
 
 ### Run [frida server](https://github.com/frida/frida/releases) on the emulator
 ```
@@ -88,3 +88,7 @@ b'hpandro{REDACTED}'
 ```
 
 ### Frida hook
+
+
+# Reference
+* https://stackoverflow.com/questions/40951213/how-to-convert-java-byte-to-python-string
