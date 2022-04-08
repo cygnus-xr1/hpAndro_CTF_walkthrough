@@ -35,7 +35,7 @@ As it can be seen the class **com.hpandro.androidsecurity.ui.activity.task.encry
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_enc_dec_methods.png?raw=true)
 
 ## Dynamic analysis
-The simplest method to extract the private key and the decrypted flag is to use [objection](https://github.com/sensepost/objection) to hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
+The simplest method to solve the challenge is to extract the decrypted flag with [objection](https://github.com/sensepost/objection) by using a hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
 
 ### Run [frida server](https://github.com/frida/frida/releases) on the emulator
 ```
@@ -86,6 +86,15 @@ $ python3
 >>> print(data)
 b'hpandro{REDACTED}'
 ```
+
+### Extract the private key from the APK & use it to decrypt the flag
+As it can be seen in the **onGetLogs** method of class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**, the private key comes with the APK (private.der)
+
+
+```
+$ apktool d com.hpandro.androidsecurity_1.2.apk
+```
+
 
 # Reference
 * https://github.com/sensepost/objection
