@@ -86,3 +86,5 @@ $ python3
 >>> print(data)
 b'hpandro{REDACTED}'
 ```
+
+### Frida hook
