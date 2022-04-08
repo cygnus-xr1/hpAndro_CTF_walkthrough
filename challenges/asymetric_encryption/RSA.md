@@ -60,7 +60,7 @@ When the "CHECK RSA FLAG" button is clicked we'll see the following output in ob
 
 (Note: The Java byte type is a signed integer; the value ranges between -128 and 127.)
 
-The following Java snippet can be used to convert the byte array into a string:
+The following **Java snippet** can be used to convert the byte array into a string:
 ```
 public class ByteArraytoString
 {
@@ -78,8 +78,9 @@ $ javac ByteArraytoString.java && java ByteArraytoString
 hpandro{REDACTED}
 ```
 
-The following Python snippet can be used to convert the byte array into string:
+The following **Python snippet** can be used to convert the byte array into string:
 ```
+$ python3
 >>> items = [104,112,97,110,100,114,111,123,82,83,65,46,111,115,79,48,76,53,67,71,54,90,101,120,49,104,111,57,113,121,54,69,71,102,102,56,85,106,86,100,69,87,56,72,125]
 >>> data = bytes(b % 256 for b in items)                                                     
 >>> print(data)
