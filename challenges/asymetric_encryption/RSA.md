@@ -77,9 +77,11 @@ public class ByteArraytoString
 $ javac ByteArraytoString.java && java ByteArraytoString
 hpandro{REDACTED}
 ```
-```
+
 The following Python snippet can be used to convert the byte array into string:
-items = [104,112,97,110,100,114,111,123,82,83,65,46,111,115,79,48,76,53,67,71,54,90,101,120,49,104,111,57,113,121,54,69,71,102,102,56,85,106,86,100,69,87,56,72,125]
-data = bytes(b % 256 for b in items)                                                     
-print(data)
+```
+>>> items = [104,112,97,110,100,114,111,123,82,83,65,46,111,115,79,48,76,53,67,71,54,90,101,120,49,104,111,57,113,121,54,69,71,102,102,56,85,106,86,100,69,87,56,72,125]
+>>> data = bytes(b % 256 for b in items)                                                     
+>>> print(data)
+b'hpandro{REDACTED}'
 ```
