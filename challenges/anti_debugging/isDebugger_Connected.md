@@ -22,3 +22,6 @@ Initializing jdb ...
 ```
 
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/anti_debugging/img/solved.png?raw=true)
+
+## Reference
+* https://github.com/OWASP/owasp-mstg/blob/master/Document/0x05i-Testing-Code-Quality-and-Build-Settings.md
