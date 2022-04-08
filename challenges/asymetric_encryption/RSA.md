@@ -87,8 +87,7 @@ $ python3
 b'hpandro{REDACTED}'
 ```
 
-### Frida hook
-
-
 # Reference
+* https://github.com/sensepost/objection
+* https://github.com/frida/frida/releases
 * https://stackoverflow.com/questions/40951213/how-to-convert-java-byte-to-python-string
