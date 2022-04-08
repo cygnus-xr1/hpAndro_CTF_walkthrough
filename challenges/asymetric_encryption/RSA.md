@@ -31,8 +31,9 @@ The relevant classes can be found with a simple search in jadx-gui for the strin
 
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_relevant_classes.png?raw=true)
 
-## Dynamic analysis
-As it can be seen the class com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity contains a "decrypt" method which takes the private key and the encrypted value as arguments and returns the decrypted value as a byte array.
+As it can be seen the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity** contains a **"decrypt"** method which takes the private key and the encrypted value as arguments and returns the decrypted value as a byte array.
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_enc_dec_methods.png?raw=true)
 
-The simplest method to extract the private key used to decrypt the flag is to use [objection](https://github.com/sensepost/objection) to hook on the decrypt method of the class com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity
+## Dynamic analysis
+The simplest method to extract the private key used to decrypt the flag is to use [objection](https://github.com/sensepost/objection) to hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
+
