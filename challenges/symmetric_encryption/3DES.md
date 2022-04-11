@@ -18,6 +18,6 @@ echo "vhN2YEWA/njdWjOto6lT7FYaejL96ED/Ra5d7PcHtr303nSTl07llWhNFI1tfMWJ4OuTet6EWs
 A quick grep for the button's text shows us the relevant activity's name we should check further in Jadx-GUI
 ```
 grep -ri "CHECK 3DES FLAG"
-com.hpandro.androidsecurity_1.2/res/layout/**activity_three_des.xml**:        <Button android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textColor="@android:color/white" android:id="@id/btnCheckEncryptFlag" android:background="@drawable/btn_drawable" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:minWidth="150.0dip" android:text="Check 3DES Flag" />
+com.hpandro.androidsecurity_1.2/res/layout/activity_three_des.xml:        <Button android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textColor="@android:color/white" android:id="@id/btnCheckEncryptFlag" android:background="@drawable/btn_drawable" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:minWidth="150.0dip" android:text="Check 3DES Flag" />
 ```
 
