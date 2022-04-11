@@ -1,0 +1,6 @@
+apk
+apk/*
+*.apk
+pulled_data
+pulled_data/*
+challenges/*/*.js
