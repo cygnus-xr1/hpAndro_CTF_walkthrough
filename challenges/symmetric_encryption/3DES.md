@@ -25,4 +25,4 @@ These are the relevant classes we should analyze:
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_jadx_classes.png?raw=true)
 
 The onGetLogs method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.ThreeDESActivity** shows that a hardcoded password is used as the encryption key.
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/onGetLogs.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_onGetLogs.png?raw=true)
