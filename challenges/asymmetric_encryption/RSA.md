@@ -1,5 +1,5 @@
 # RSA
-Task: Your task is to find the KEY and try to decrypt given RSA encrypted flag.
+Task: Your task is to find KEY and try to decrypt given RSA encrypted flag.
 
 ## Static analysis
 Clicking on the "CHECK RSA FLAG" button results in a base64 encoded encrypted value.
