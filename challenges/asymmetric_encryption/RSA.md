@@ -125,6 +125,7 @@ hpandro{REDACTED}
 ```
 
 # Reference
+* https://github.com/OWASP/owasp-mstg/blob/master/Document/0x04g-Testing-Cryptography.md
 * https://www.kali.org/tools/apktool/
 * https://github.com/skylot/jadx
 * https://github.com/sensepost/objection

@@ -100,6 +100,7 @@ hpandro{REDACTED}
 ```
 
 # Reference
+* https://github.com/OWASP/owasp-mstg/blob/master/Document/0x04g-Testing-Cryptography.md
 * https://www.kali.org/tools/apktool/
 * https://github.com/skylot/jadx
 * https://jiavictor.wordpress.com/2017/05/26/generate-same-3des-aes-128-aes-256-encrypted-message-with-python-php-java-and-openssl/
