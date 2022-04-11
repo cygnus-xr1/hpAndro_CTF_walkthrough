@@ -21,3 +21,6 @@ grep -ri "CHECK 3DES FLAG"
 com.hpandro.androidsecurity_1.2/res/layout/activity_three_des.xml:        <Button android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textColor="@android:color/white" android:id="@id/btnCheckEncryptFlag" android:background="@drawable/btn_drawable" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:minWidth="150.0dip" android:text="Check 3DES Flag" />
 ```
 
+These are the relevant classes we should analyze:
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_jadx_classes.png?raw=true)
+
