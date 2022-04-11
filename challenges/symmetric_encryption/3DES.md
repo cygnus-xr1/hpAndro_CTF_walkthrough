@@ -15,6 +15,12 @@ echo "vhN2YEWA/njdWjOto6lT7FYaejL96ED/Ra5d7PcHtr303nSTl07llWhNFI1tfMWJ4OuTet6EWs
 00000038
 ```
 
+Unpack the APK with apktool
+```
+$ apktool d com.hpandro.androidsecurity_1.2.apk
+```
+
+
 A quick grep for the button's text shows us the relevant activity's name we should check further in Jadx-GUI
 ```
 $ grep -ri "CHECK 3DES FLAG"
@@ -93,3 +99,7 @@ public class threeDES_decrypt {
 $ javac threeDES_decrypt.java && java threeDES_decrypt
 hpandro{REDACTED}
 ```
+
+#Reference
+* https://www.kali.org/tools/apktool/
+* https://github.com/skylot/jadx

@@ -125,6 +125,8 @@ hpandro{REDACTED}
 ```
 
 # Reference
+* https://www.kali.org/tools/apktool/
+* https://github.com/skylot/jadx
 * https://github.com/sensepost/objection
 * https://github.com/frida/frida/releases
 * https://stackoverflow.com/questions/40951213/how-to-convert-java-byte-to-python-string
