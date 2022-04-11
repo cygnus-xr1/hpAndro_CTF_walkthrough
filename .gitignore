@@ -4,3 +4,6 @@ apk/*
 pulled_data
 pulled_data/*
 challenges/*/*.js
+challenges/*/*.py
+challenges/*/*.java
+challenges/*/*.class
