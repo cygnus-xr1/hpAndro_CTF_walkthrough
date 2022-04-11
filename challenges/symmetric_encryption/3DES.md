@@ -24,7 +24,7 @@ com.hpandro.androidsecurity_1.2/res/layout/activity_three_des.xml:        <Butto
 These are the relevant classes we should analyze:
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_jadx_classes.png?raw=true)
 
-The onGetLogs method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.ThreeDESActivity** shows that a hardcoded password is used as the encryption key (3des_enc_pass).
+The **onGetLogs** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.ThreeDESActivity** shows that a hardcoded password is used as the encryption key (3des_enc_pass).
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_onGetLogs.png?raw=true)
 
 A quick grep reveals the hardcoded password used for the DES3 encryption:
@@ -34,3 +34,10 @@ res/values-ar-rXB/strings.xml:    <string name="_3des_enc_pass">‏‮3hpAndro�
 res/values/public.xml:    <public type="string" name="_3des_enc_pass" id="0x7f100011" />
 res/values/strings.xml:    <string name="_3des_enc_pass">3hpAndro</string>
 ```
+
+The **decrypt** method takes 2 parameters, the encrypted data (str) and the hardcoded password (str2).
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_decrypt.png?raw=true)
+
+As it can be seen above, the key used for encryption/decryption is the first 24 bytes of the hardcoded password's SHA1 hash (line 84, 88).
+
+The following Java snippet is the replication of the "decrypt" method found in class **com.hpandro.androidsecurity.ui.activity.task.encryption.ThreeDESActivity**:
