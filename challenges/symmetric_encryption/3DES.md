@@ -41,3 +41,55 @@ The **decrypt** method takes 2 parameters, the encrypted data (str) and the hard
 As it can be seen above, the key used for encryption/decryption is the first 24 bytes of the hardcoded password's SHA1 hash (line 84, 88).
 
 The following Java snippet is the replication of the "decrypt" method found in class **com.hpandro.androidsecurity.ui.activity.task.encryption.ThreeDESActivity**:
+```
+import java.util.Arrays;
+import java.util.Base64;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.MessageDigest;
+
+
+public class threeDES_decrypt {
+
+    private String decrypt(String data, String secretKey) {
+        try {
+            // Base64 decode && Get the bytes of the encrypted data
+            byte[] encBytes = Base64.getDecoder().decode(data.getBytes("utf-8"));
+
+            // Get the SHA1 digest of the secretKey
+            MessageDigest instance = MessageDigest.getInstance("SHA1");
+            byte[] bytePass = instance.digest(secretKey.getBytes("utf-8"));
+            
+            // First 24 bytes of the SHA1 hash
+            byte[] byteKey = Arrays.copyOf(bytePass, 24);
+            
+            // Decryption
+            SecretKey key = new SecretKeySpec(byteKey, "DESede");
+            Cipher cipher = Cipher.getInstance("DESede");
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] byteText = cipher.doFinal(encBytes);
+            String clearText = new String(byteText, "utf-8");
+            
+            return clearText;
+        }
+        catch(Exception ex) {
+            return ex.getMessage();
+        }
+    }
+ 
+    public static void main(String[] args) {
+       
+        String data = "";
+        String secretKey = "";
+        String clearText = new threeDES_decrypt().decrypt(data, secretKey);
+
+        System.out.println(clearText);
+    }
+}
+```
+
+```
+$ javac threeDES_decrypt.java && java threeDES_decrypt
+hpandro{REDACTED}
+```
