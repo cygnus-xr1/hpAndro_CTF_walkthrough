@@ -103,3 +103,4 @@ hpandro{REDACTED}
 # Reference
 * https://www.kali.org/tools/apktool/
 * https://github.com/skylot/jadx
+* https://jiavictor.wordpress.com/2017/05/26/generate-same-3des-aes-128-aes-256-encrypted-message-with-python-php-java-and-openssl/
