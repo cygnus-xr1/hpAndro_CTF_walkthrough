@@ -36,9 +36,8 @@ The **onGetLogs** method of the class **com.hpandro.androidsecurity.ui.activity.
 A quick grep reveals the hardcoded password used for the DES3 encryption:
 ```
 $ grep -ri "3des_enc_pass"
-res/values-ar-rXB/strings.xml:    <string name="_3des_enc_pass">‏‮3hpAndro‬‏</string>
 res/values/public.xml:    <public type="string" name="_3des_enc_pass" id="0x7f100011" />
-res/values/strings.xml:    <string name="_3des_enc_pass">3hpAndro</string>
+res/values/strings.xml:    <string name="_3des_enc_pass">{REDACTED}</string>
 ```
 
 The **decrypt** method takes 2 parameters, the encrypted data (str) and the hardcoded password (str2).
