@@ -4,7 +4,7 @@ Task: Your task is to find the KEY and try to decrypt given RSA encrypted flag.
 ## Static analysis
 Clicking on the "CHECK RSA FLAG" button results in a base64 encoded encrypted value.
 
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/encrypted_flag.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymmetric_encryption/img/encrypted_flag.png?raw=true)
 
 ```
 echo "OplOuJowyt9ZtkIPKcmi6FVp50sZGd3+TbwXgQYxW0v/+sA87tG2ViJ9D5GOFHvl7nffGNLju5kzE33b1CKztu6/rHbIsu5lftp2qgtLQZdIdYy7F6MDhbvyLNk786QgXPLwND6ccFUv4brz8GAAefougdBYKr9o8IWBw8HxRfu884WLQnOxuhMnANXOU7yp1xaap2ojejSeNNbOWn1VKBMaZviXGVXXR6m4lFlHxMUXEP9h4bjrMraapiNLMM+2sUCuhD80beZK1NVakchy8FpqfJ/+hXaokSvnvQIHTr3H9JPD+flzwgYQn9FVvet4494+c2+rBTFOMdrYxHQwqg==" | base64 -d | hd
@@ -29,10 +29,10 @@ echo "OplOuJowyt9ZtkIPKcmi6FVp50sZGd3+TbwXgQYxW0v/+sA87tG2ViJ9D5GOFHvl7nffGNLju5
 
 The relevant classes can be found with a simple search in jadx-gui for the string "RSA/"
 
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_relevant_classes.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymmetric_encryption/img/rsa_relevant_classes.png?raw=true)
 
 As it can be seen the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity** contains a **"decrypt"** method which takes the private key and the encrypted value as arguments and returns the decrypted value as a byte array.
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_enc_dec_methods.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymmetric_encryption/img/rsa_enc_dec_methods.png?raw=true)
 
 ## Dynamic analysis
 The simplest method to solve the challenge is to extract the decrypted flag with [objection](https://github.com/sensepost/objection) by using a hook on the **"decrypt"** method of the class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**
@@ -89,8 +89,8 @@ b'hpandro{REDACTED}'
 
 ### Extract the private key from the APK & Decrypt the flag with OpenSSL
 As it can be seen in the **onGetLogs** method of class **com.hpandro.androidsecurity.ui.activity.task.encryption.RSAActivity**, the private key comes with the APK (private.der)
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_privatekeyfile.png?raw=true)
-![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymetric_encryption/img/rsa_assetmanager.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymmetric_encryption/img/rsa_privatekeyfile.png?raw=true)
+![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/asymmetric_encryption/img/rsa_assetmanager.png?raw=true)
 
 Let's extract the apk contents:
 ```
