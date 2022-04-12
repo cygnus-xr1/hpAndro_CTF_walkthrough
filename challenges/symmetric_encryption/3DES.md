@@ -3,7 +3,6 @@ Task: Your task is to find KEY and try to decrypt given 3DES encrypted flag.
 
 ## Static analysis
 Clicking on the "CHECK 3DES FLAG" button results in a base64 encoded encrypted value.
-
 ![img](https://github.com/cygnus-xr1/hpAndro_CTF_walkthrough/blob/main/challenges/symmetric_encryption/img/3des_enc_flag.png?raw=true)
 
 ```
